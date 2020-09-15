@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
     <title>Soaps!!!</title>
 </head>
-<body>
-    <div id="base-list"></div>
-    <div id="soap-list"></div>
-    <script src="index.js"></script>
-</body>
+    <body class="pink lighten-4">
+        <script src="index.js"></script>
+
+        <h3>Create a New Soap! </h3>
+        <form id="soap-form">
+            <div clas="container">
+                <div class="card">
+                    <div class="card-content">
+                        <h5>Select a Soap Base!</h5>
+                        <div>
+                            <label for="base-name">Base Selection:</label>
+                            <select type="text" name="base-name" id="base-name"/> <br/>  
+                        </div>
+                        <div>
+                            <h5>Select a Butter</h5>
+                            <label for="soap-butter">Butter Me Up!</label>
+                            <select name="soap-butter" id="soap-butter"/>
+                        </div>
+                        <div>
+                            <h5>Select Your Oils.</h5>
+                            <label for="soap-essential">Essential Oils</label>
+                            <select name="soap-essential" id="soap-essential"/>
+                            <label for="soap-fragrance">Fragrance Oils</label>
+                            <select name="soap-fragrance" id="soap-fragrance"/>
+                        </div>
+                        <div>
+                        <h5>Select an Exfoliant</h5>
+                            <label for="soap-exfoliant">Exfoliants</label>
+                            <select name="soap-exfoliant" id="soap-exfoliant"/>
+                        </div>
+                        <div>
+                        <h5>Choose your Soap Color</h5>
+                            <label for="soap-colorant">Colorants</label>
+                            <select name="soap-colorant" id="soap-colorant"/>
+                        </div>
+                        <div>
+                            <h5>Name That Soap!</h5>
+                                <label for="soap-title">Soap Name: </label>
+                                <input type="text" name="soap-title" id="soap-title"/>
+                        </div>
+                        <div>
+                            <input type="submit" value="Create Soap"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </form>
+        <hr>
+        <h3>View Created Soaps!</h3>
+            <div id="base-list"></div>
+            <div id="soap-list"></div>
+        <hr>
+    </body>
 </html>
