@@ -16,7 +16,26 @@ const soapName = () => document.querySelector('input#soap-title')
     } 
 
     createBases = (bases) => {
+        //debugger
         bases.forEach(base => {
             let newBase = new Base(base.id, base.name, base.description)
         })
     }
+
+
+    function getSoaps(){ event, id
+     const id = event.target.dataset
+    fetch(baseUrl + `/bases/${id}`)
+    .then(resp => resp.json())
+    .then(soaps => {
+        viewSoaps(soap)    
+      })
+    }
+
+    viewSoaps = (soaps) => {
+        soaps.forEach(soap => { 
+            let newSoap = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id )     
+            
+        }) 
+    }   
+    

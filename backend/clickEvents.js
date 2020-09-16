@@ -1,3 +1,3 @@
-function attachClicks(){
-   document.querySelectorAll("li a ").addEventListener("click", getSoaps)
-}
+// function attachClicks(){
+//    document.querySelector("button#view-soaps").addEventListener("click", Soaps)
+// }

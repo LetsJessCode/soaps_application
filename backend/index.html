@@ -15,8 +15,8 @@
         <div class="container">
             <div class="card">
               <div class="card-content">
-                <h3 id="title" class="center">Soapers Island!</h3>
-                <p id="description" class="center">Welcome to Soapers Island! Choose a Base and add your Soap Ingredients to create your very own soap!</p>
+                <h3 id="title" class="center">Soaps!</h3>
+                <p id="description" class="center">Welcome to the Soap Bar! Choose a Base and add your Soap Ingredients to create your very own soap!</p>
               </div>
             </div> 
        
@@ -25,7 +25,6 @@
             <div clas="container">
                 <div class="card">
                     <div class="card-content">
-                        <h5>Select a Soap Base!</h5>
                         <div>
                             <h6>Name Your Soap!</h>
                                 <label for="soap-title">Soap Name: </label>
@@ -51,6 +50,7 @@
                             <label for="soap-colorant">Colorant</label>
                             <select name="soap-colorant" id="soap-colorant"/>
                         </div>
+                        <br>
                         <div>
                             <input type="submit" value="Create Soap"/>
                         </div>
@@ -62,14 +62,17 @@
         <h3>View Bases!</h3>
         <div class="container">
             <div id="base-list"></div>
-            <div id="show-soaps"></div>
+            <div id="soap-list"></div>
+            <div id="the-soaps"></div>
+
         </div>
 
         <div id="view-soap"></div>
         <hr>
         <script src="index.js"></script>
-         <script src="base.js"></script> 
+        <script src="base.js"></script> 
         <script src="soap.js"></script>
+        <script src="clickEvents.js"></script>
     </body>
 </html>
 
