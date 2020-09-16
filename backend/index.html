@@ -12,8 +12,14 @@
     <title>Soaps!!!</title>
 </head>
     <body class="pink lighten-4">
-        <script src="index.js"></script>
-
+        <div class="container">
+            <div class="card">
+              <div class="card-content">
+                <h3 id="title" class="center">Soapers Island!</h3>
+                <p id="description" class="center">Welcome to Soapers Island! Choose a Base and add your Soap Ingredients to create your very own soap!</p>
+              </div>
+            </div> 
+       
         <h3>Create a New Soap! </h3>
         <form id="soap-form">
             <div clas="container">
@@ -21,35 +27,29 @@
                     <div class="card-content">
                         <h5>Select a Soap Base!</h5>
                         <div>
-                            <label for="base-name">Base Selection:</label>
-                            <select type="text" name="base-name" id="base-name"/> <br/>  
+                            <h6>Name Your Soap!</h>
+                                <label for="soap-title">Soap Name: </label>
+                                <input type="text" name="soap-title" id="soap-title"/>
                         </div>
                         <div>
-                            <h5>Select a Butter</h5>
                             <label for="soap-butter">Butter Me Up!</label>
                             <select name="soap-butter" id="soap-butter"/>
                         </div>
                         <div>
-                            <h5>Select Your Oils.</h5>
+                            <h6>Essentials</h6>
                             <label for="soap-essential">Essential Oils</label>
                             <select name="soap-essential" id="soap-essential"/>
+                        </div>
+                        <div>
                             <label for="soap-fragrance">Fragrance Oils</label>
                             <select name="soap-fragrance" id="soap-fragrance"/>
                         </div>
                         <div>
-                        <h5>Select an Exfoliant</h5>
                             <label for="soap-exfoliant">Exfoliants</label>
                             <select name="soap-exfoliant" id="soap-exfoliant"/>
                         </div>
-                        <div>
-                        <h5>Choose your Soap Color</h5>
-                            <label for="soap-colorant">Colorants</label>
+                            <label for="soap-colorant">Colorant</label>
                             <select name="soap-colorant" id="soap-colorant"/>
-                        </div>
-                        <div>
-                            <h5>Name That Soap!</h5>
-                                <label for="soap-title">Soap Name: </label>
-                                <input type="text" name="soap-title" id="soap-title"/>
                         </div>
                         <div>
                             <input type="submit" value="Create Soap"/>
@@ -59,9 +59,17 @@
             </div>
          </form>
         <hr>
-        <h3>View Created Soaps!</h3>
+        <h3>View Bases!</h3>
+        <div class="container">
             <div id="base-list"></div>
-            <div id="soap-list"></div>
+            <div id="show-soaps"></div>
+        </div>
+
+        <div id="view-soap"></div>
         <hr>
+        <script src="index.js"></script>
+         <script src="base.js"></script> 
+        <script src="soap.js"></script>
     </body>
 </html>
+

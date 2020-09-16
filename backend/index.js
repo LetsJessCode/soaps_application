@@ -1,38 +1,22 @@
 const baseUrl = "http://localhost:3000"
-const baseList = () => document.getElementById('base-list')
-const soapList = () => document.getElementById('soap-list')
-
 
 document.addEventListener('DOMContentLoaded', getBases())
+
+const soapList = () => document.getElementById('soap-list')
+const soapForm = () => document.getElementById('soap-form')
+const soapName = () => document.querySelector('input#soap-title')
+
 
     function getBases(){
         fetch(baseUrl + '/bases')
         .then(resp => resp.json())
         .then(bases => {
-                bases.forEach(base => {
-            const baseList = document.getElementById('base-list')
-            baseList.innerHTML += `
-            <li>
-                    <a href="#" data_id="${base.id}">${base.name}</a>
-            </li>`
-            document.querySelectorAll("li a").forEach(base => base.addEventListener("click", getSoaps))
-            }) 
+            createBases(bases)
+         })
+    } 
+
+    createBases = (bases) => {
+        bases.forEach(base => {
+            let newBase = new Base(base.id, base.name, base.description)
         })
     }
-
-    function getSoaps(){
-        // const id = event.target.dataset
-        fetch(baseUrl + '/soaps')
-        .then(resp => resp.json())
-        .then(soaps => {
-                soaps.forEach(soap => {
-            const soapList = document.getElementById('soap-list')
-            soapList.innerHTML += `
-            <li>
-                    <a href="#" data_id= "${soap.id}">${soap.title}</a>
-            </li>`
-            }) 
-        })
-    }
-
-
