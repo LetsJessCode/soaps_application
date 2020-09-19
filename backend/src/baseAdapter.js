@@ -11,7 +11,6 @@ class BaseAdapter{
         .then(bases => {
             bases.forEach((base) => {
                 let newBASE = new Base(base.id, base.name, base.description, base.soaps)
-                
                 newBASE.renderBase(base.id, base.name, base.description, base.soaps)
             })
         })

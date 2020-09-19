@@ -1,5 +1,5 @@
 const bases = new BaseAdapter
-const soap = new SoapAdapter
+const soaps = new SoapAdapter 
 
 document.addEventListener('DOMContentLoaded', (init))
 function init(){

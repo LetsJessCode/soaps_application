@@ -1,4 +1,4 @@
-class BaseAdapter{
+class SoapAdapter{
 
     constructor(){
         this.baseUrl = "http://localhost:3000"
@@ -11,12 +11,9 @@ class BaseAdapter{
         .then(soaps => {
             soaps.forEach(soap => { 
                 let newSoap = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
-                
-                newSoap.renderSoap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
             }) 
-        }   
-    )}
-}    
-
+        })   
+    }
+}
     
     
