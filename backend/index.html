@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified CSS 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
             
     <title>Soaps!!!</title>
 </head>
@@ -20,13 +20,13 @@
               </div>
             </div> 
        
-        <h3>Create a New Soap! </h3>
-        <form id="soap-form">
+       <!--<h3>Create a New Soap! </h3>
+    /* <form id="soap-form">
             <div clas="container">
                 <div class="card">
                     <div class="card-content">
                         <div>
-                            <h6>Name Your Soap!</h>
+                            <h6>Name Your Soap!</h6>
                                 <label for="soap-title">Soap Name: </label>
                                 <input type="text" name="soap-title" id="soap-title"/>
                         </div>
@@ -57,22 +57,28 @@
                     </div>
                 </div>
             </div>
-         </form>
+         </form>*/ --> 
+        
         <hr>
-        <h3>View Bases!</h3>
+        <h3 class='center'>View Bases...</h3>
         <div class="container">
-            <div id="base-list"></div>
+            <div id="base-list">
+                
+            </div>
+            
             <div id="soap-list"></div>
             <div id="the-soaps"></div>
-
         </div>
 
-        <div id="view-soap"></div>
+        <div id="view-base">
+        </div>
         <hr>
+        <script src="src/base.js"></script> 
+        <script src="src/baseAdapter.js"></script>
         <script src="index.js"></script>
-        <script src="base.js"></script> 
-        <script src="soap.js"></script>
-        <script src="clickEvents.js"></script>
+        <script src="src/soap.js"></script>
+        <script src="src/soapAdapter.js"></script>
     </body>
 </html>
+    
 
