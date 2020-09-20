@@ -9,7 +9,6 @@ class Soap {
             this.colorant = colorant;
             this.butter = butter;
             this.base_id = base_id;
-            this.renderSoap()
         }
 
     renderSoap = () => {
@@ -18,7 +17,7 @@ class Soap {
         const soapsDiv = () => document.getElementById(`the-soaps-${this.id}`)
         const soapInfo = document.createElement('li')
         // soapsDiv.appendChild(soapInfo)
-        soapInfo.id = `{base.id}`
+        soapInfo.id = `${base.id}`
         //soapCard.display = none
         soapInfo.innerHTML +=
             `   <li> Title: ${this.title}</li>
@@ -67,6 +66,7 @@ class Soap {
               }
            }
         }
+        
         static updateSoap(e) {
             let title = document.querySelector('').value;
             let content = soapContent().value;

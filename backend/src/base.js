@@ -4,7 +4,9 @@ class Base {
          this.id = id;
          this.name = name;
          this.description = description;
-     }
+         this.baseAdapter = new BaseAdapter;
+         this.soaps = new SoapAdapter;
+             }
      
     //  delete bases
          deleteBase(){
@@ -32,25 +34,21 @@ class Base {
                     <hr>
                 </div>
                 `
-                document.getElementById(`newSoap${this.id}`).addEventListener('click', this.createSoapForm)
-                document.getElementById(`viewSoap${this.id}`).addEventListener('click', getSoaps)
+                document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
+                document.getElementById(`viewSoap${this.id}`).addEventListener('click', this.soaps.fetchSoaps)
             }  
 
     // link to a show page and show code
      createSoapForm = (e) => {
-       
-        const soapDiv = document.getElementById(`soap-form-${e.target.dataset.id}`)
+      // debugger
+        const soapDiv = document.getElementById(`soap-form-${e.id}`)
+        // debugger
         let soapForm = `
-        <form>
-             <label for="bases"> Base:</label>
-             <select name="bases" id="baseId">
-                 <option value=" "> </option>
-                 <option value="13">Goats Milk</option>
-                 <option value="14">Buttermilk</option>
-                 <option value="15">Oatmeal</option>
-                 <option value="16">Hemp</option>
-                 <option value="17">Olive Oil</option>
-                 <option value="18">Shea Butter</option></select><br>
+        <form id="soap-form">
+            <label for=""> Base: </label>
+            <select name="baseOption" id="baseOption" form="soap-form">
+                 <option value="${e.id} "> ${e.name} </option>     
+            </select><br>
  
              <label for="essential">Essential Oil:</label>
              <select name="essential" id="essential">
@@ -127,7 +125,7 @@ class Base {
                     <option id="cof_ground">Coffee Ground</option>
                     <option id="rosemary">Rosemary </option>
                     <option id="oatmeal">Oatmeal</option>
-             </select><br>
+                </select><br>
  
              <label for="butter">Butters:</label>
              <select name="butter" id="butter">
@@ -163,13 +161,16 @@ class Base {
             </select> <br>
              
              <label for="title">Name Your Soap Creation:</label>
-             <input type="text">
+             <input id="soap-name" type="text">
              <button id='add-soap'>New Soap </button>
      </form>` 
+     //debugger
      soapDiv.innerHTML = soapForm  
-     baseSelector = document.getElementById("baseId")
-     baseSelector.selectedIndex  = e.target.dataset.id
-     }      
+        
+        // document.getElementById("baseOption").selectedIndex  = `${e.id}`
+        document.getElementById('add-soap').addEventListener('click', this.soaps.submitSoaps)
+     }      // possible refactor may need to change the base dropdown to just name
+            // may render form options dynamically 
     } 
 
  

@@ -15,4 +15,20 @@ class BaseAdapter{
             })
         })
     }
+    fetchIndivBase = (e) => {
+        //debugger
+        fetch(this.baseUrl + `/bases/${e.target.dataset.id}`)
+        .then(resp => resp.json())
+        .then(base => {
+              let newBASE = new Base(base)
+               newBASE.createSoapForm(base)
+
+        })
+    }
+
+    displaySoaps = () => {
+        let id = e.target.dataset.id
+        let soapDiv = document.getElementById(`the-soaps-${this.id}`)
+    }
+
 }
