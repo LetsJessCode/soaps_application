@@ -16,8 +16,6 @@ class Base {
     //  show all bases on page
             renderBase = () => {
                 //debugger
-                this.clearViews()
-                const baseList = () => document.getElementById('base-list')
                 const basesDiv = document.getElementById('view-base')
                 const baseCard = document.createElement('div')
                 basesDiv.appendChild(baseCard)
@@ -165,11 +163,7 @@ class Base {
               document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
      }      // possible refactor may need to change the base dropdown to just name
             // may render form options dynamically 
-    
-    clearViews() {
-       
-    }
-    
+        
     } 
 
  

@@ -11,22 +11,28 @@ class Soap {
             this.butter = butter;
             this.base_id = base_id;
             this.base = base;
+            this.soapAdapter = new SoapAdapter
         }
 
+      
 
      renderSoap = () => {
          //debugger 
+        const soapDiv = document.getElementById('soap-list')
         const div = document.createElement('div')
-        const h4 = document.createElement('h4')
+        const h5 = document.createElement('h5')
         const p = document.createElement('p')
         const deleteButton = document.createElement('button')
         const hr = document.createElement('hr')
 
+        soapDiv.style.display = "none"
+        
+        div.setAttribute('id', `soap-${this.id}`)
+
         deleteButton.innerText = 'Delete'
         deleteButton.id = this.id;
-        deleteButton.addEventListener('click', this.removeSoap)
-
-          h4.innerText = `Soap Name: ${this.title}`;
+        deleteButton.addEventListener('click', this.soapAdapter.removeSoap)
+          h5.innerText = `Soap Name: ${this.title}`;
           p.innerText = `
            Base: ${this.base.name}
            Butter: ${this.butter}
@@ -35,31 +41,10 @@ class Soap {
            Exfoliant: ${this.exfoliant}
            Color: ${this.colorant}`
            
-          div.appendChild(h4)
+          div.appendChild(h5)
           div.appendChild(p);
           div.appendChild(deleteButton);
           document.getElementById('soap-list').appendChild(div);
           div.appendChild(hr)
         }  
-
-        removeSoap(){
-          debugger
-          this.id
-          this.parentNode
-
-          fetch(`http://localhost:3000/soaps/${this.id}`, {
-            method: "delete",
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-          })
-          .then(resp => {
-            return resp.json();
-          })
-          .then(soap => {
-            this.parentNode.remove();
-          })
-        }
-       
     }

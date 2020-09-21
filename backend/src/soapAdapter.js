@@ -3,7 +3,13 @@ class SoapAdapter{
     fetchSoaps(){   // working
         //debugger
         fetch('http://localhost:3000/soaps')
-        .then(resp => resp.json())
+        .then(resp => {
+            if (resp.status !==200){
+                throw new Error(resp.statusText);
+            }
+            return resp.json()
+        })
+        .catch(errors => console.log(errors))
         .then(soaps => { 
             soaps.forEach((soap) => { 
                 let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
@@ -52,10 +58,30 @@ class SoapAdapter{
             let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
                 newSOAP.renderSoap(soap)
             })
+            clearViews();
         }
   
+    removeSoap(){
+        //debugger
+        this.id
+        this.parentNode
+
+        fetch(`http://localhost:3000/soaps/${this.id}`, {
+            method: "delete",
+            headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+            },
+        })
+        // .then(resp => {
+        //     alert(resp.message)
+        // })
+        .then( 
+            document.getElementById(`soap-${this.id}`).remove()  
+        )  
+      }
+
     }
-   
     
         
         
