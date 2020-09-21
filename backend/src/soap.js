@@ -1,7 +1,8 @@
 class Soap {
     static all = [];
 
-    constructor(essential, fragrance, title, exfoliant, colorant, butter, base_id, base ){
+    constructor(id, essential, fragrance, title, exfoliant, colorant, butter, base_id, base ){
+            this.id = id;
             this.essential = essential;
             this.fragrance = fragrance;
             this.title = title;
@@ -25,15 +26,15 @@ class Soap {
         deleteButton.id = this.id;
         deleteButton.addEventListener('click', this.removeSoap)
 
-          h4.innerText = this.title;
+          h4.innerText = `Soap Name: ${this.title}`;
           p.innerText = `
+           Base: ${this.base.name}
            Butter: ${this.butter}
            Essentials: ${this.essential}
            Fragrance: ${this.fragrance}
            Exfoliant: ${this.exfoliant}
-           Color: ${this.colorant}
-           Base : ${this.base.name}
-           `
+           Color: ${this.colorant}`
+           
           div.appendChild(h4)
           div.appendChild(p);
           div.appendChild(deleteButton);
@@ -42,12 +43,16 @@ class Soap {
         }  
 
         removeSoap(){
-          //debugger
+          debugger
           this.id
           this.parentNode
 
-          fetch('http://localhost:3000/soaps' + this.id, {
-            method: "delete"
+          fetch(`http://localhost:3000/soaps/${this.id}`, {
+            method: "delete",
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
           })
           .then(resp => {
             return resp.json();
@@ -56,40 +61,5 @@ class Soap {
             this.parentNode.remove();
           })
         }
-
-        static editSoap(e) {
-            editing = true;
-        
-            // populate form inputs
-            soapTitle().value = this.parentNode.querySelector('h4').innerText
-            soapEssential().value = this.parentNode.querySelector('p').innerText;
-            soapFragrance().value = this.parentNode.querySelector('p').innerText;
-            soapExfoliant().value = this.parentNode.querySelector('p').innerText;
-            soapColorant().value = this.parentNode.querySelector('p').innerText;
-            soapButter().value = this.parentNode.querySelector('p').innerText;
-            submitButton().value = "Edit Soap"
-            Soap.updatedSoapId = this.id;
-            // debugger;
-          }   
-        // static updateSoap(e) {
-            // let title = document.querySelector('').value;
-            // let content = soapContent().value;
-            // let essential = soapEssential().value;
-            // let fragrance = soapFragrance().value;
-            // let exfoliant = soapExfoliant().value;
-            // let colorant = soapColorant().value;
-            // let butter = soapButter().value;
-        // 
-            // const strongParams = {
-              // soap: {
-                // title: title,
-                // essential: essential,
-                // fragrance: fragrance,
-                // exfoliant: exfoliant,
-                // colorant: colorant, 
-                // butter: butter
-              // }
-            // }
-        // }
        
     }

@@ -4,18 +4,13 @@ const soaps = new SoapAdapter
 
 window.addEventListener('load', (init))
 function init(){
-    bases.fetchBases
+    bases.fetchBases()
+    soaps.fetchSoaps
     
 }
-function displaySoap(){
-  console.log('am i being called here?')
-    document.getElementById('soapIndex').addEventListener('click', soaps.fetchSoaps)
+function displaySoap(){ //working!
+      document.getElementById('soapIndex').addEventListener('click', soaps.fetchSoaps)
   }
-
-  function displayBases(){
-    document.getElementById('base-load').addEventListener('click', bases.fetchBases )
-  }
-
 
 const soapForm = () => document.getElementById('soap-form')
 const soapName = () => document.querySelector('input#soap-title')

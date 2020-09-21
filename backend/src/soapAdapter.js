@@ -1,18 +1,14 @@
 class SoapAdapter{
 
-    constructor(){
-        this.baseUrl = "http://localhost:3000"
-    }
-
     fetchSoaps(){   // working
         //debugger
         fetch('http://localhost:3000/soaps')
         .then(resp => resp.json())
         .then(soaps => { 
             soaps.forEach((soap) => { 
-                let newSOAP = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
+                let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
 
-                newSOAP.renderSoap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
+                newSOAP.renderSoap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
             }) 
         })   
     }
@@ -52,8 +48,8 @@ class SoapAdapter{
         fetch('http://localhost:3000/soaps', configObj)
         .then(resp => resp.json())
         .then(soap => {
-            debugger
-            let newSOAP = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
+            //debugger
+            let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
                 newSOAP.renderSoap(soap)
             })
         }
