@@ -11,27 +11,29 @@ class Soap {
             this.base_id = base_id;
         }
 
-    renderSoap = () => {
-      //debugger
-        const viewSoaps = () => document.getElementById('soap-list')
-        const soapsDiv = () => document.getElementById(`the-soaps-${this.id}`)
-        const soapInfo = document.createElement('li')
-        // soapsDiv.appendChild(soapInfo)
-        soapInfo.id = `${base.id}`
-        //soapCard.display = none
-        soapInfo.innerHTML +=
-            `   <li> Title: ${this.title}</li>
-                <li> Butter: ${this.butter}</li>
-                <li> Essentials: ${this.essential}</li>
-                <li> Fragrance: ${this.fragrance}</li>
-                <li> Exfoliant: ${this.exfoliant}</li>
-                <li> Color: ${this.colorant}</li>
-            <button class="edit_soap" data-id=${this.id}>Edit Soap</button> 
-            <button class="delete_soap" data-id=${this.id}>Delete Soap</button>   
-            <hr>
-            `
-        }
-        
+     renderSoap = () => {
+         //debugger 
+        const div = document.createElement('div')
+        const h5 = document.createElement('h5')
+        const ul = document.createElement('ul')
+          h5.innerText = this.title;
+          ul.innerText = `
+           Butter: ${this.butter}
+           Essentials: ${this.essential}
+           Fragrance: ${this.fragrance}
+           Exfoliant: ${this.exfoliant}
+           Color: ${this.colorant}
+           Base : ${this.base_id}
+           `
+          //  <button class="edit_soap" data-id=${this.id}>Edit Soap</button> 
+          //  <button class="delete_soap" data-id=${this.id}>Delete Soap</button>   
+          div.appendChild(h5)
+          div.appendChild(ul);
+
+          document.getElementById('soap-list').appendChild(div);
+        // document.getElementById('edit_soap').addEventListener('click', editSoap)
+        }  
+
         static editSoap(e) {
             editing = true;
         
@@ -45,47 +47,26 @@ class Soap {
             submitButton().value = "Edit Soap"
             Soap.updatedSoapId = this.id;
             // debugger;
-          }
-
-          static createFromForm(e) {
-            e.preventDefault();
-        
-            // params.require(:soap).permit(:title, :content)
-            if (editing) {
-              Soap.updateSoap();
-            } else {
-              const strongParams = {
-                soap: {
-                  title: soapTitle().value,
-                  essential: soapEssential().value,
-                  fragrance: soapFragrance().value,
-                  exfoliant: soapExfoliant().value,
-                  colorant: soapColorant().value,
-                  butter: soapButter().value
-                }
-              }
-           }
-        }
-        
-        static updateSoap(e) {
-            let title = document.querySelector('').value;
-            let content = soapContent().value;
-            let essential = soapEssential().value;
-            let fragrance = soapFragrance().value;
-            let exfoliant = soapExfoliant().value;
-            let colorant = soapColorant().value;
-            let butter = soapButter().value;
-        
-            const strongParams = {
-              soap: {
-                title: title,
-                essential: essential,
-                fragrance: fragrance,
-                exfoliant: exfoliant,
-                colorant: colorant, 
-                butter: butter
-              }
-            }
-        }
+          }        
+        // static updateSoap(e) {
+            // let title = document.querySelector('').value;
+            // let content = soapContent().value;
+            // let essential = soapEssential().value;
+            // let fragrance = soapFragrance().value;
+            // let exfoliant = soapExfoliant().value;
+            // let colorant = soapColorant().value;
+            // let butter = soapButter().value;
+        // 
+            // const strongParams = {
+              // soap: {
+                // title: title,
+                // essential: essential,
+                // fragrance: fragrance,
+                // exfoliant: exfoliant,
+                // colorant: colorant, 
+                // butter: butter
+              // }
+            // }
+        // }
        
     }

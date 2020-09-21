@@ -27,17 +27,12 @@ class Base {
                     <h5>Base Name: ${this.name}</h5>
                     <div id="soap-form-${this.id}"></div>
                     <h5> All About The Base: </h5><p> ${this.description}</p>
-                    <ul id="the-soaps-${this.id}">
-                    </ul>
                     <button id='newSoap${this.id}' data-id=${this.id}>Create Soap!</button>
-                    <button id='viewSoap${this.id}' data-id=${this.id}>View Soap List</button>
                     <hr>
                 </div>
                 `
                 document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
-                document.getElementById(`viewSoap${this.id}`).addEventListener('click', this.soaps.fetchSoaps)
             }  
-
     // link to a show page and show code
      createSoapForm = (e) => {
       // debugger
@@ -166,9 +161,7 @@ class Base {
      </form>` 
      //debugger
      soapDiv.innerHTML = soapForm  
-        
-        // document.getElementById("baseOption").selectedIndex  = `${e.id}`
-        document.getElementById('add-soap').addEventListener('click', this.soaps.submitSoaps)
+              document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
      }      // possible refactor may need to change the base dropdown to just name
             // may render form options dynamically 
     } 

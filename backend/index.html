@@ -18,27 +18,36 @@
               <div class="card-content">
                 <h3 id="title" class="center">Soaps!</h3>
                 <p id="description" class="center">Welcome to the Soap Bar! Choose a Base and add your Soap Ingredients to create your very own soap!</p>
+                
+                <button id='soapIndex' onclick="displaySoap()">View Soap List</button>
               </div>
             </div>     
         <hr>
         <h3 class=center>View Bases...</h3>
         <div class="container">
-            <div id="base-list">
-                
-            </div>
-            
-            <div id="soap-list"></div>
-            <div id="the-soaps"></div>
+            <div id="base-list">            
         </div>
 
         <div id="view-base">
         </div>
         <hr>
-        <script src="src/base.js"></script> 
-        <script src="src/baseAdapter.js"></script>
-        <script src="src/soap.js"></script>
-        <script src="src/soapAdapter.js"></script>
-        <script src="index.js"></script>
+        <h4>Soap List</h4>
+        <div class="container">
+            <div id="soap-list">
+                <!-- <div id="view-soap"> -->
+                    <!-- <ul id='the-soaps'> -->
+
+                    <!-- </ul> -->
+            </div>
+        </div>
+
+        </div>
+            <script src="src/baseAdapter.js"></script>
+            <script src="src/base.js"></script> 
+            <script src="src/soapAdapter.js"></script>       
+            <script src="src/soap.js"></script>
+            <script src="index.js"></script>
+    
     </body>
 </html>
     

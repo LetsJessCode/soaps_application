@@ -1,15 +1,22 @@
 const bases = new BaseAdapter
 const soaps = new SoapAdapter 
 
-document.addEventListener('DOMContentLoaded', (init))
+
+window.addEventListener('load', (init))
 function init(){
     bases.fetchBases()
+    
 }
+function displaySoap(){
+  console.log('am i being called here?')
+    document.getElementById('soapIndex').addEventListener('click', soaps.fetchSoaps)
+  }
 
 
-const soapList = () => document.getElementById('soap-list')
 const soapForm = () => document.getElementById('soap-form')
 const soapName = () => document.querySelector('input#soap-title')
+
+
 
 
 
