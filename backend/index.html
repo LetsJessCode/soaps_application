@@ -17,9 +17,19 @@
             <div class="card">
               <div class="card-content">
                 <h3 id="title" class="center">Soaps!</h3>
-                <p id="description" class="center">Welcome to the Soap Bar! Choose a Base and add your Soap Ingredients to create your very own soap!</p>
-                
+                <p id="description" class="center">Welcome to the Soap Bar! Choose a Base and add your Soap Ingredients to create your very own soap!</p> 
                 <button id='soapIndex' onclick="displaySoap()">View Soap List</button>
+                <button id='base-load' onclick="displayBases()">View Base List</button>
+                <!-- <script>
+                    function loadBase(){
+                        let b = document.getElementById("base-list");
+                            if(b.style.display==="none"){
+                                b.style.display="block"
+                            } else {
+                               b.style.display="none"
+                            }
+                        }
+                </script> -->
               </div>
             </div>     
         <hr>
@@ -33,11 +43,7 @@
         <hr>
         <h4>Soap List</h4>
         <div class="container">
-            <div id="soap-list">
-                <!-- <div id="view-soap"> -->
-                    <!-- <ul id='the-soaps'> -->
-
-                    <!-- </ul> -->
+            <div id="soap-list">   
             </div>
         </div>
 

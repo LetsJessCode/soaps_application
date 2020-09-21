@@ -6,7 +6,7 @@ class BaseAdapter{
 
     fetchBases(){
         //debugger
-        fetch(this.baseUrl + '/bases')
+        fetch('http://localhost:3000/bases')
         .then(resp => resp.json())
         .then(bases => {
             bases.forEach((base) => {

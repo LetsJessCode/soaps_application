@@ -4,21 +4,20 @@ class SoapAdapter{
         this.baseUrl = "http://localhost:3000"
     }
 
-    fetchSoaps(){
+    fetchSoaps(){   // working
         //debugger
         fetch('http://localhost:3000/soaps')
         .then(resp => resp.json())
         .then(soaps => { 
             soaps.forEach((soap) => { 
-                let newSOAP = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
-                console.log('soap')
+                let newSOAP = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
 
                 newSOAP.renderSoap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
             }) 
         })   
     }
     // need to create a display method for the soaps to be displayed
-    createFromForm = (e) => {
+    createFromForm = (e) => {   //working!
        // debugger
         e.preventDefault()
             const baseOption = document.getElementById('baseOption').value //strong params
@@ -28,38 +27,40 @@ class SoapAdapter{
             const butter = document.getElementById('butter').value //strong params
             const colorant = document.getElementById('colorant').value //strong params
             const soapName = document.getElementById('soap-name').value //strong params
-               
-            let newSoapObj = { 
-                baseOption: baseOption,
-                essential: essential,
-                fragrance: fragrance,
-                exfoliant: exfoliant,
-                butter: butter,
-                colorant: colorant,
-                soapName: soapName
+            let strongParams = { 
+                soap: {
+                    essential: essential,
+                    fragrance: fragrance,
+                    exfoliant: exfoliant,
+                    colorant: colorant,
+                    butter: butter,
+                    title: soapName,
+                    base_id: baseOption
+                }
             }
+                
+                                                                                            
             let configObj = {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify(newSoapObj),
+                body: JSON.stringify(strongParams),
             }
 
         fetch('http://localhost:3000/soaps', configObj)
         .then(resp => resp.json())
-        .then(soap => { soap.renderSoap()
+        .then(soap => {
+            debugger
+            let newSOAP = new Soap(soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
+                newSOAP.renderSoap(soap)
             })
         }
+  
     }
-    // params.require(:soap).permit(:title, :content)
-    // if (editing) {
-    //   Soap.updateSoap();
-    // } else {
-    //  
-        
-        
+   
+    
         
         
         
