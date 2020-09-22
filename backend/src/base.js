@@ -32,6 +32,9 @@ class Base {
                 `
                 document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
             }  
+
+     
+
     // link to a show page and show code
      createSoapForm = (e) => {
       // debugger
@@ -39,11 +42,13 @@ class Base {
         // debugger
         let soapForm = `
         <form id="soap-form">
-            <label for=""> Base: </label>
-            <select name="baseOption" id="baseOption" form="soap-form">
-                 <option value="${e.id}"> ${e.name} </option>     
-            </select><br>
- 
+            <div class="input-field col s12">
+                <select name="baseOption" id="baseOption" form="soap-form">
+                <label for=""> Base: </label> 
+                 <option value="${e.id}"> ${e.name} </option>    
+            </select>
+            </div>
+            <div class="input-field col s12">
              <label for="essential">Essential Oil:</label>
              <select name="essential" id="essential">
                 <option value=" ">Essential Oils </option>
@@ -64,7 +69,8 @@ class Base {
                 <option value="Sandalwood">Sandalwood Oil</option> 
                 <option value="Frankincense">Frankincense Oil </option>
              </select><br>
- 
+            </div>
+            <div class="input-field col s12">
              <label for="fragrance">Fragrance Oil:</label>
              <select name="fragrance" id="fragrance">
                     <option value=" "> Fragrance Oils </option>
@@ -108,7 +114,8 @@ class Base {
                     <option id="Sea Moss Oil"> Sea Moss Oil </option>
                     <option id="Hazelnut Toffee Oil"> Hazelnut Toffee Oil</option>
              </select><br>
- 
+            </div>
+            <div class="input-field col s12">
              <label for="exfoliant">Exfoliant:</label>
                 <select name="exfoliant" id="exfoliant">
                     <option value=" "> Exfoliants </option>
@@ -120,7 +127,8 @@ class Base {
                     <option id="Rosemary">Rosemary </option>
                     <option id="Oatmeal">Oatmeal</option>
                 </select><br>
- 
+             </div>
+             <div class="input-field col s12">
              <label for="butter">Butters:</label>
              <select name="butter" id="butter">
                 <option value=" "> Butters </option>
@@ -131,7 +139,8 @@ class Base {
                 <option value="Avocado Butter">Avocado Butter</option> 
                 <option value="Coffee Butter">Coffee Butter</option> 
              </select> <br>
- 
+            </div>
+            <div class="input-field col s12">
              <label for="colorant">Color:</label>
             <select name="colorant" id="colorant">
                 <option value=" "> Colors </option>
@@ -153,7 +162,7 @@ class Base {
                 <option value="Caribbean Blue ">Caribbean Blue</option> 
                 <option value="Emerald Green ">Emerald Green</option>              
             </select> <br>
-             
+             </div>
              <label for="title">Name Your Soap Creation:</label>
              <input id="soap-name" type="text">
              <button id='add-soap'>New Soap </button>
@@ -162,9 +171,9 @@ class Base {
      soapDiv.innerHTML = soapForm  
               document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
      }      // possible refactor may need to change the base dropdown to just name
-            // may render form options dynamically 
-        
+            // may render form options dynamically   
     } 
+
 
  
 

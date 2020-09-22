@@ -13,11 +13,10 @@ class Soap {
             this.base = base;
             this.soapAdapter = new SoapAdapter
         }
-
-      
-
+        
      renderSoap = () => {
          //debugger 
+        
         const soapDiv = document.getElementById('soap-list')
         const div = document.createElement('div')
         const h5 = document.createElement('h5')

@@ -3,8 +3,8 @@ const soaps = new SoapAdapter
 const soapForm =  document.getElementById('soap-form')
 //const getElementById()
 
-window.addEventListener('load', (init))
-function init(){
+window.addEventListener('load', (loadPage))
+function loadPage(){
     bases.fetchBases()
     soaps.fetchSoaps()
 }
@@ -28,6 +28,8 @@ const soapName = () => document.querySelector('input#soap-title')
 function clearViews() {
     document.getElementById('soap-form').value = "";
 }
+
+
 
 // clearSoapForm(){
 //   soap

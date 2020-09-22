@@ -40,8 +40,7 @@ class SoapAdapter{
                     base_id: baseOption
                 }
             }
-                
-                                                                                            
+
             let configObj = {
                 method: "POST",
                 headers: {
@@ -58,7 +57,8 @@ class SoapAdapter{
             let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
                 newSOAP.renderSoap(soap)
             })
-            clearViews();
+
+            displaySoap();
         }
   
     removeSoap(){
