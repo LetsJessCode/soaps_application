@@ -1,0 +1,95 @@
+/* color scheme:
+  #F4F1F0 - beige
+   #96756E - dark tan
+   #BB9086 - nude
+   #974B4C - dark coral 
+   #3B2938 - burgundy
+ */
+
+body {
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 33%;
+  padding-top: 32px;
+  text-align: justify;
+  line-height: 200%;
+  background-color: #3B2938;
+  color: #F4F1F0;
+}
+/* .card-content {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 5%;
+  text-align: justify;
+  line-height: 150%;
+  background-color:#3B2938;
+  color: #F4F1F0;
+  align-content: center;
+} */
+
+button {
+  display: block;
+  padding: 20px;
+  width: 200px;
+  margin: auto;
+  background-color: #96756E;
+  color: #FAFAF9;
+  border-radius: 15px;
+}
+
+h3 {
+  font-size: 42px;
+  font-family: "Inconsolata";
+}
+
+h5 {
+  font-size: 24px;
+  font-family: "Inconsolata";
+}
+
+p {
+  font-size: 24px;
+  font-family: "Inconsolata";
+}
+header {
+  background-color: #974B4C;
+  padding-left: 41%;
+  padding-right: 0%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: relative;
+  border-radius: 15px;
+}
+
+footer {
+  background-color: #974B4C;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.bCard {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: #F4F1F0;
+  color: #3B2938;
+  line-height: 1.4;
+  font-family: 'Inconsolata';
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  a {
+    background-color: #BB9086;        
+    }
+  
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  

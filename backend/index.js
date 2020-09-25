@@ -1,7 +1,7 @@
 const bases = new BaseAdapter
 const soaps = new SoapAdapter 
 const soapForm =  document.getElementById('soap-form')
-//const getElementById()
+
 
 window.addEventListener('load', (loadPage))
 function loadPage(){
@@ -10,7 +10,6 @@ function loadPage(){
 }
 
 function displaySoap(){ //working!
-    //   document.getElementById('soapIndex').addEventListener('click', soaps.fetchSoaps)
       let baseDiv = document.getElementById('view-base')
       let soapDiv = document.getElementById('soap-list')
       baseDiv.style.display = "none"
@@ -29,11 +28,6 @@ function clearViews() {
     document.getElementById('soap-form').value = "";
 }
 
-
-
-// clearSoapForm(){
-//   soap
-// }
 
 
 

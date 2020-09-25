@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleSheet.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-    <!-- Compiled and minified CSS 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <!-- Compiled and minified CSS
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
 
     <!-- Compiled and minified JavaScript 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
             
     <title>Soaps!!!</title>
 </head>
-    <body class="pink lighten-4">
+    <body>
+        <header><h3> Soaps! </h3></header>
         <div class="container">
             <div class="card">
               <div class="card-content">
-                <h3 id="title" class="center">Soaps!</h3>
                 <p id="description" class="center">Welcome to the Soap Bar!<br> To create a soap: <br> 1. 'View Base Options' <br> 2. Select a soap Base <br> 3. Create a your Soap! </p> 
               </div>
             </div>  
@@ -24,22 +26,24 @@
             <button id='baseIndex' onclick="displayBase()">View Base Options</button>   
         <hr>
         <h3 class=center></h3>
-        <div class="container">       
-            <div id="soap-list"></div>   
-                <hr>
-                <div id="view-base" class="card">
-                  
-                </div>         
-        </div>
-        <hr>
 
+        <div class="card" >       
+            <div id="soap-list"></div>    
         </div>
+
+        
+        <div id="view-base"> 
+       
+            <hr>         
+         </div>      
             <script src="src/baseAdapter.js"></script>
             <script src="src/base.js"></script> 
             <script src="src/soapAdapter.js"></script>       
             <script src="src/soap.js"></script>
             <script src="index.js"></script>
-    
+            <footer>
+
+            </footer>
     </body>
 </html>
     

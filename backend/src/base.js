@@ -7,11 +7,6 @@ class Base {
          this.baseAdapter = new BaseAdapter;
          this.soaps = new SoapAdapter;
              }
-     
-    //  delete bases
-         deleteBase(){
-             console.log("You Clicked Delete Base!")
-            }
 
     //  show all bases on page
             renderBase = () => {
@@ -19,15 +14,21 @@ class Base {
                 const basesDiv = document.getElementById('view-base')
                 const baseCard = document.createElement('div')
                 basesDiv.appendChild(baseCard)
-                // baseCard.classList.add('base-card')
+                baseCard.classList.add('base-card')
                 baseCard.id = this.id
                 baseCard.innerHTML += 
-                `<div id=${this.id}>
-                    <h5>Base Name: ${this.name}</h5>
-                    <div id="soap-form-${this.id}"></div>
-                    <h5> All About The Base: </h5><p> ${this.description}</p>
-                    <button id='newSoap${this.id}' data-id=${this.id}>Create Soap!</button>
-                    <hr>
+               `<div class="bCard" id=${this.id}>
+                    <div class="meta">
+                        <h5>Soap Base: ${this.name}</h5>      
+                        <div class="description-${this.id}">
+                            <h5> All About The Base: </h5><p> ${this.description}</p>
+                            
+                            <button id='newSoap${this.id}' data-id=${this.id}>Create Soap!</button>
+
+                            <div id="soap-form-${this.id}"></div>
+                            <hr>
+                        </div>
+                    </div>
                 </div>
                 `
                 document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
@@ -35,18 +36,19 @@ class Base {
 
      
 
-    // link to a show page and show code
      createSoapForm = (e) => {
       // debugger
         const soapDiv = document.getElementById(`soap-form-${e.id}`)
         // debugger
         let soapForm = `
         <form id="soap-form">
-            <div class="input-field col s12">
-                <select name="baseOption" id="baseOption" form="soap-form">
-                <label for=""> Base: </label> 
-                 <option value="${e.id}"> ${e.name} </option>    
-            </select>
+            <div class="base_category">
+                <div class="select">
+                    <select name="baseOption" id="baseOption" form="soap-form">
+                        <label for=""> Base: </label> 
+                        <option value="${e.id}"> ${e.name} </option>    
+                    </select>
+                </div>
             </div>
             <div class="input-field col s12">
              <label for="essential">Essential Oil:</label>
@@ -170,6 +172,7 @@ class Base {
      //debugger
      soapDiv.innerHTML = soapForm  
               document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
+              
      }      // possible refactor may need to change the base dropdown to just name
             // may render form options dynamically   
     } 

@@ -22,7 +22,6 @@ class BaseAdapter{
         .then(base => {
               let newBASE = new Base(base)
                newBASE.createSoapForm(base)
-
         })
     }
 }

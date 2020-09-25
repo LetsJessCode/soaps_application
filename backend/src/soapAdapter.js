@@ -18,7 +18,6 @@ class SoapAdapter{
             }) 
         })   
     }
-    // need to create a display method for the soaps to be displayed
     createFromForm = (e) => {   //working!
        // debugger
         e.preventDefault()
@@ -57,8 +56,6 @@ class SoapAdapter{
             let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
                 newSOAP.renderSoap(soap)
             })
-
-            displaySoap();
         }
   
     removeSoap(){
@@ -80,7 +77,6 @@ class SoapAdapter{
             document.getElementById(`soap-${this.id}`).remove()  
         )  
       }
-
     }
     
         

@@ -13,16 +13,16 @@ class Soap {
             this.base = base;
             this.soapAdapter = new SoapAdapter
         }
-        
+
      renderSoap = () => {
          //debugger 
-        
         const soapDiv = document.getElementById('soap-list')
         const div = document.createElement('div')
         const h5 = document.createElement('h5')
         const p = document.createElement('p')
         const deleteButton = document.createElement('button')
         const hr = document.createElement('hr')
+        
 
         soapDiv.style.display = "none"
         
