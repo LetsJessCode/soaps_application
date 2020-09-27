@@ -16,22 +16,40 @@ body {
   background-color: #3B2938;
   color: #F4F1F0;
 }
-/* .card-content {
+.card-content {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 20px;
   padding-bottom: 5%;
   text-align: justify;
   line-height: 150%;
-  background-color:#3B2938;
-  color: #F4F1F0;
-  align-content: center;
-} */
+  background-color:#BB9086;
+  color: #3B2938;
+  opacity: .65;
+  border-radius: 15px;
+  background-image: url(https://lovelygreens.com/wp-content/uploads/make-rose-soap-750x440.jpg);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+  background-origin: content-box;
+
+}
+
+.soapButtons {
+position: fixed;
+top: 30px;
+width: 70px;
+height: 20px;/*height: auto;*/
+margin-left: 900px;
+z-index: 99;
+padding: 0;
+opacity: .4;
+}
 
 button {
   display: block;
   padding: 20px;
-  width: 200px;
+  width: 150px;
   margin: auto;
   background-color: #96756E;
   color: #FAFAF9;
@@ -52,23 +70,23 @@ p {
   font-size: 24px;
   font-family: "Inconsolata";
 }
-header {
-  background-color: #974B4C;
-  padding-left: 41%;
+/* header {
+  background-color: #3B2938;
+  padding-left: 30%;
   padding-right: 0%;
   padding-bottom: 10px;
   padding-top: 10px;
   position: relative;
   border-radius: 15px;
-}
+} */
 
-footer {
+/* footer {
   background-color: #974B4C;
   padding-top: 16px;
   padding-bottom: 16px;
   position: relative;
   border-radius: 15px;
-}
+} */
 
 .bCard {
   display: flex;
