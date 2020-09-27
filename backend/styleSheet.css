@@ -25,24 +25,24 @@ body {
   line-height: 150%;
   background-color:#BB9086;
   color: #3B2938;
-  opacity: .65;
+  opacity: .45;
   border-radius: 15px;
   background-image: url(https://lovelygreens.com/wp-content/uploads/make-rose-soap-750x440.jpg);
-  background-position: right center;
+  background-position: right ;
   background-repeat: no-repeat;
-  background-size: 300px 300px;
-  background-origin: content-box;
-
+  background-size: 450px 327px;
 }
 
 .soapButtons {
 position: fixed;
+padding-left: 25px;
+padding-right: 25px;
+padding-bottom: 10px;
 top: 30px;
 width: 70px;
 height: 20px;/*height: auto;*/
 margin-left: 900px;
 z-index: 99;
-padding: 0;
 opacity: .4;
 }
 

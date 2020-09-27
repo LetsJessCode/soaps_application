@@ -18,23 +18,23 @@ class Base {
                 baseCard.id = this.id
                 baseCard.innerHTML += 
                `<div class="bCard" id=${this.id}>
-                    <div class="meta">
-                        <h5>Soap Base: ${this.name}</h5>      
+                    <div class="meta">     
                         <div class="description-${this.id}">
-                            <h5> All About The Base: </h5><p> ${this.description}</p>
-                            
-                            <button id='newSoap${this.id}' data-id=${this.id}>Create Soap!</button>
-
-                            <div id="soap-form-${this.id}"></div>
+                             <h5>All About The Base: ${this.name} </h5>
                             <hr>
+                            <p id="vb-${this.id}"> ${this.description}
+                                <button id='newSoap${this.id}' data-id=${this.id}>Create Soap!</button>
+                            </p>
                         </div>
+                        <div id="soap-form-${this.id}"></div>
                     </div>
                 </div>
                 `
                 document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
             }  
+       resetInputs(){
 
-     
+       }
 
      createSoapForm = (e) => {
       // debugger
@@ -172,7 +172,7 @@ class Base {
      //debugger
      soapDiv.innerHTML = soapForm  
               document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
-              
+        
      }      // possible refactor may need to change the base dropdown to just name
             // may render form options dynamically   
     } 

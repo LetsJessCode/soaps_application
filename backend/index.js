@@ -22,10 +22,17 @@ function displaySoap(){ //working!
         baseDiv.style.display = "block"
         soapDiv.style.display = "none"
     }
+
+
 const soapName = () => document.querySelector('input#soap-title')
 
 function clearViews() {
-    document.getElementById('soap-form').value = "";
+    document.getElementById('essential').value = " ";
+    document.getElementById('fragrance').value = " ";
+    document.getElementById('exfoliant').value = " ";
+    document.getElementById('butter').value = " ";
+    document.getElementById('colorant').value = " ";
+    document.getElementById('soap-name').value = "";
 }
 
 
