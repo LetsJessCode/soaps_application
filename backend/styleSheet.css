@@ -100,14 +100,47 @@ p {
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
-  a {
-    background-color: #BB9086;        
-    }
-  
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 5%;
   .meta {
     position: relative;
     z-index: 0;
     height: 200px;
   }
+} 
 
- 
+ .soapView {
+  float: left;
+  width: 40%;
+  border: 1px solid #BB9086;
+  padding-left: 2%;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQJEhLdNR7ZQTcZTdeDfJ8ta1IoGS6jxRlmcg&usqp=CAU');
+  background-position: top ;
+  background-repeat: no-repeat;
+  background-size: 350px 100px;
+  border-radius: 5px;
+  background-color: #F4F1F0;
+  color: #3B2938;
+ }
+
+ .front{
+   font-size: medium;
+   padding-right: 2;
+ }
+       
+ .back {
+   font-size: x-small;
+ }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ .soapView:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}

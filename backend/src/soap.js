@@ -21,30 +21,33 @@ class Soap {
         const h5 = document.createElement('h5')
         const p = document.createElement('p')
         const deleteButton = document.createElement('button')
-        const hr = document.createElement('hr')
-        
+        // const hr = document.createElement('hr')
+      
         soapDiv.style.display = "block"
         
         div.setAttribute('class', "soapView" )
         div.setAttribute('id', `soap-${this.id}`)
-        
+        h5.setAttribute('class', "front")
+        p.setAttribute('class', "back")
+        deleteButton.setAttribute('class', "remove")
+
         deleteButton.innerText = 'Delete'
         deleteButton.id = this.id;
         deleteButton.addEventListener('click', this.soapAdapter.removeSoap)
-          h5.innerText = `Soap Name: ${this.title}`;
+          h5.innerText = ``;
           p.innerText = `
+           Soap Name: ${this.title}
            Base: ${this.base.name}
            Butter: ${this.butter}
            Essentials: ${this.essential}
            Fragrance: ${this.fragrance}
            Exfoliant: ${this.exfoliant}
-           Color: ${this.colorant}`
-
-           
-          div.appendChild(h5)
+           Color: ${this.colorant}
+           `
+          div.appendChild(h5);
           div.appendChild(p);
           div.appendChild(deleteButton);
           document.getElementById('soap-list').appendChild(div);
-          div.appendChild(hr)
+          // div.appendChild(hr);
         }  
     }
