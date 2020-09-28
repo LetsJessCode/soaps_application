@@ -1,5 +1,5 @@
 class Soap {
-    static all = [];
+    // static all = [];
 
     constructor(id, essential, fragrance, title, exfoliant, colorant, butter, base_id, base ){
             this.id = id;
@@ -23,8 +23,7 @@ class Soap {
         const deleteButton = document.createElement('button')
         const hr = document.createElement('hr')
         
-
-        soapDiv.style.display = "none"
+        soapDiv.style.display = "block"
         
         div.setAttribute('id', `soap-${this.id}`)
 
@@ -39,6 +38,7 @@ class Soap {
            Fragrance: ${this.fragrance}
            Exfoliant: ${this.exfoliant}
            Color: ${this.colorant}`
+
            
           div.appendChild(h5)
           div.appendChild(p);

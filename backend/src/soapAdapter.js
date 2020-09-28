@@ -28,6 +28,7 @@ class SoapAdapter{
             const butter = document.getElementById('butter').value //strong params
             const colorant = document.getElementById('colorant').value //strong params
             const soapName = document.getElementById('soap-name').value //strong params
+            
             let strongParams = { 
                 soap: {
                     essential: essential,
@@ -57,7 +58,7 @@ class SoapAdapter{
                 newSOAP.renderSoap(soap)
             })
             clearViews()
-            
+            displaySoap()
         }
   
     removeSoap(){

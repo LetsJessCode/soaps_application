@@ -1,18 +1,21 @@
 class Base {
-    static all = [] // persistent thru the class similar to a class method.
+    // static all = [] // persistent thru the class similar to a class method.
      constructor(id, name, description) {
          this.id = id;
          this.name = name;
          this.description = description;
          this.baseAdapter = new BaseAdapter;
          this.soaps = new SoapAdapter;
-             }
+            }
 
-    //  show all bases on page
+    //  display all bases on page
             renderBase = () => {
                 //debugger
                 const basesDiv = document.getElementById('view-base')
                 const baseCard = document.createElement('div')
+
+                basesDiv.style.display ="none"
+                
                 basesDiv.appendChild(baseCard)
                 baseCard.classList.add('base-card')
                 baseCard.id = this.id
@@ -31,10 +34,7 @@ class Base {
                 </div>
                 `
                 document.getElementById(`newSoap${this.id}`).addEventListener('click', this.baseAdapter.fetchIndivBase)
-            }  
-       resetInputs(){
-
-       }
+            }
 
      createSoapForm = (e) => {
       // debugger
@@ -172,10 +172,10 @@ class Base {
      //debugger
      soapDiv.innerHTML = soapForm  
               document.getElementById('add-soap').addEventListener('click', this.soaps.createFromForm)
-        
-     }      // possible refactor may need to change the base dropdown to just name
-            // may render form options dynamically   
-    } 
+              
+            //   soapDiv.style.display = "block"
+     }      
+} 
 
 
  
