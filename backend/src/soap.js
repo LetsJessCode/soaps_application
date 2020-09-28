@@ -25,8 +25,9 @@ class Soap {
         
         soapDiv.style.display = "block"
         
+        div.setAttribute('class', "soapView" )
         div.setAttribute('id', `soap-${this.id}`)
-
+        
         deleteButton.innerText = 'Delete'
         deleteButton.id = this.id;
         deleteButton.addEventListener('click', this.soapAdapter.removeSoap)
