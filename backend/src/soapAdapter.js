@@ -101,24 +101,15 @@ class SoapAdapter{
                 return 0;
                 //debugger                
               });//   debugger
-            soaps.forEach((soap, index) => { 
+            soaps.forEach((soap) => { 
                 // debugger
-                
                 let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
 
                 newSOAP.renderSoap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
-
             }) 
         })   
-        // .then(soaps => { 
-           
-           
-        //       let component = new Soap(soaps.id, soaps.essential, soaps.fragrance, soaps.title, soaps.exfoliant, soaps.colorant, soaps.butter, soaps.base_id, soaps.base)
-
-        //             component.renderSoap(soaps.id, soaps.essential, soaps.fragrance, soaps.title, soaps.exfoliant, soaps.colorant, soaps.butter, soaps.base_id, soaps.base)
-            //})
-        }
-     }
+    }
+}
         
         
         

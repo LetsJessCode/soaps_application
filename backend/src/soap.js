@@ -14,8 +14,6 @@ class Soap {
             this.soapAdapter = new SoapAdapter
         }
 
-      
-
      renderSoap = () => {
         //debugger 
         const soapDiv = document.getElementById('soap-list')
@@ -53,13 +51,6 @@ class Soap {
           div.appendChild(deleteButton);
           document.getElementById('soap-list').appendChild(div);
         } 
-
-  //  static displayAbc = () => {
-  //   const soapDiv = document.getElementById('soap-list')
-  //     soapDiv.innerHTML.append
-  //   debugger
-  //   }
-          
     }
 
    
