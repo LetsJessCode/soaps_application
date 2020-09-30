@@ -30,14 +30,18 @@
             <button id='soapIndex' onclick="displaySoap()">View Soap List</button>  
         </div>
 
-        <div class="soap-cards" >       
+        <div class="soap-cards" >  
             <div class="row" id="soap-list">
+
                 <h3 class="createSoap">Created Soaps! </h3>
+                <button onclick="SoapAdapter.sortSoaps()"> Sort Soaps </button>
                 <hr>
             </div>    
         </div>
-
-        
+        <!-- sort button - add event listener make fetch call
+        when click on it makes fetch to back end
+        sorts by abc...will use mozilla
+         -->
         <div id="view-base"> 
             <h3 class="baseList">Base List</h3>
             <hr>         

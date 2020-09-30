@@ -14,8 +14,10 @@ class Soap {
             this.soapAdapter = new SoapAdapter
         }
 
+      
+
      renderSoap = () => {
-         //debugger 
+        //debugger 
         const soapDiv = document.getElementById('soap-list')
         const div = document.createElement('div')
         const h5 = document.createElement('h5')
@@ -25,15 +27,17 @@ class Soap {
       
         soapDiv.style.display = "block"
         
-        div.setAttribute('class', "soapView" )
+        div.setAttribute('class', `soapView ${this.title}` )
         div.setAttribute('id', `soap-${this.id}`)
         h5.setAttribute('class', "front")
         p.setAttribute('class', "back")
-        deleteButton.setAttribute('class', "remove")
 
+        deleteButton.setAttribute('class', "remove")
         deleteButton.innerText = 'Delete'
         deleteButton.id = this.id;
         deleteButton.addEventListener('click', this.soapAdapter.removeSoap)
+
+
           h5.innerText = ``;
           p.innerText = `
            Soap Name: ${this.title}
@@ -48,6 +52,14 @@ class Soap {
           div.appendChild(p);
           div.appendChild(deleteButton);
           document.getElementById('soap-list').appendChild(div);
-          // div.appendChild(hr);
-        }  
+        } 
+
+  //  static displayAbc = () => {
+  //   const soapDiv = document.getElementById('soap-list')
+  //     soapDiv.innerHTML.append
+  //   debugger
+  //   }
+          
     }
+
+   

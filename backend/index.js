@@ -7,6 +7,7 @@ window.addEventListener('load', (loadPage))
 function loadPage(){
     bases.fetchBases()
     soaps.fetchSoaps()
+    soaps.sortSoaps
 }
 
 function displaySoap(){ //working!
@@ -23,7 +24,6 @@ function displaySoap(){ //working!
         soapDiv.style.display = "none"
     }
 
-
 const soapName = () => document.querySelector('input#soap-title')
 
 function clearViews() {
@@ -34,7 +34,7 @@ function clearViews() {
     document.getElementById('colorant').value = " ";
     document.getElementById('soap-name').value = "";
 }
-
+ 
 
 
 

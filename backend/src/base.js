@@ -1,15 +1,13 @@
 class Base {
-    // static all = [] // persistent thru the class similar to a class method.
      constructor(id, name, description) {
          this.id = id;
          this.name = name;
          this.description = description;
          this.baseAdapter = new BaseAdapter;
          this.soaps = new SoapAdapter;
-            }
+    }
 
-    //  display all bases on page
-            renderBase = () => {
+                renderBase = () => {
                 //debugger
                 const basesDiv = document.getElementById('view-base')
                 const baseCard = document.createElement('div')

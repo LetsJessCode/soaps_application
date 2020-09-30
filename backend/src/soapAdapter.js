@@ -1,5 +1,5 @@
 class SoapAdapter{
-
+       
     fetchSoaps(){   // working
         //debugger
         fetch('http://localhost:3000/soaps')
@@ -15,6 +15,7 @@ class SoapAdapter{
                 let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
 
                 newSOAP.renderSoap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
+
             }) 
         })   
     }
@@ -77,8 +78,47 @@ class SoapAdapter{
             document.getElementById(`soap-${this.id}`).remove()  
         )  
       }
-    }
-    
+
+      static sortSoaps(){ //function works properly
+       //debugger
+        fetch('http://localhost:3000/soaps')
+        .then(resp => resp.json())
+        .then(soaps => { 
+            //debugger
+            let list = document.getElementById('soap-list') 
+            list.innerHTML = ""
+                soaps.sort(function(a, b) {
+                let nameA = a.title.toUpperCase(); // ignore upper and lowercase
+                let nameB = b.title.toUpperCase(); // ignore upper and lowercase
+                
+                if (nameA < nameB) {
+                  return -1;
+                }
+                if (nameA > nameB) {
+                  return 1;
+                }
+                // names must be equal
+                return 0;
+                //debugger                
+              });//   debugger
+            soaps.forEach((soap, index) => { 
+                // debugger
+                
+                let newSOAP = new Soap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id, soap.base)
+
+                newSOAP.renderSoap(soap.id, soap.essential, soap.fragrance, soap.title, soap.exfoliant, soap.colorant, soap.butter, soap.base_id)
+
+            }) 
+        })   
+        // .then(soaps => { 
+           
+           
+        //       let component = new Soap(soaps.id, soaps.essential, soaps.fragrance, soaps.title, soaps.exfoliant, soaps.colorant, soaps.butter, soaps.base_id, soaps.base)
+
+        //             component.renderSoap(soaps.id, soaps.essential, soaps.fragrance, soaps.title, soaps.exfoliant, soaps.colorant, soaps.butter, soaps.base_id, soaps.base)
+            //})
+        }
+     }
         
         
         
